@@ -1,4 +1,4 @@
-versions: 0.1
+version: 0.2
 
 phases:
   install:
@@ -6,18 +6,15 @@ phases:
       - echo Installing NGINX
       - sudo yum update -y
       - sudo yum install nginx -y
+
   build:
     commands:
-      - echo Build Started on `date`
-      - sudo cp index.html /usr/share/nginx/html/
-      - echo index.html file copied now copying style.css
-      - sudo cp style.css /usr/share/nginx/html/
-      - echo style.css copy done
-  post_build:
-    commands:
-      - echo Configuring NGINX
-# Optional — Only include if you need to pass files to CodeDeploy or next stage
+      - echo Build started on `date`
+      - echo Nothing to build for static website
+
 artifacts:
   files:
     - index.html
     - style.css
+    - appspec.yml
+    - scripts/install.sh
