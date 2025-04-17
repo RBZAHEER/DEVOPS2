@@ -17,4 +17,4 @@ artifacts:
     - index.html
     - style.css
     - appspec.yml
-    - scripts/install.sh
+    - scripts/*
